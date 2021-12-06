@@ -440,7 +440,7 @@ label { }
 /*----------------------------------------------
     5.4 Page Header
 ----------------------------------------------*/
-.page-header { background: linear-gradient(rgba(36, 39, 38, 0.5), rgba(36, 39, 38, 0.5)), rgba(36, 39, 38, 0.5) url(../images/page-header.jpg) no-repeat center; background-size: cover; margin: 0; border-bottom: none; padding-bottom: 0px; }
+.page-header { background:#f4f1ec; background-size: cover; margin: 0; border-bottom: none; padding-bottom: 0px; }
 .page-caption { padding: 120px 0px; position: relative; z-index: 1; color: #fff; text-align: center; }
 .page-title { color: #fff;  font-size: 40px; font-weight: 400; letter-spacing: -1px; }
 .breadcrumb { }
