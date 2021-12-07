@@ -16,7 +16,7 @@
     <tr>
         <td>
             <a href="{{ url_for('.user', username = user.username) }}">
-                <img class="img-rounded" src="{{user.gravatar(size=32) }}">
+                <img src="{{ avatars.robohash(user.avatar_hash) }}" alt="" class="img-circle" width="10%" height="auto">
                 {{ user.username }}
             </a>
         </td>

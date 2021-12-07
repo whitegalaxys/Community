@@ -32,7 +32,7 @@ type="image/x-icon">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <a href="index.html"><img src="{{ url_for('static', filename = 'homelogo.png') }}" alt="Home Logo" width="150" height="75"></a>
+                    <a href="{{ url_for('main.index') }}"><img src="{{ url_for('static', filename = 'homelogo.png') }}" alt="Home Logo" width="150" height="75"></a>
                 </div>
                 <div class="col-lg-8 col-md-4 col-sm-12 col-xs-12">
                     <div class="navigation">
@@ -51,7 +51,6 @@ type="image/x-icon">
                              {% if current_user.is_authenticated %}
                     <li class="has-sub">
                         <a>
-                            <img src="{{ current_user.gravatar(size=18) }}">
                             {{current_user.username}}
                         </a>
                         <ul>
@@ -84,7 +83,9 @@ type="image/x-icon">
     {% endfor %}
    {% block page_content %}{% endblock %}
     </div>
-{% block bottom %}
+{% block footer %}
+
+
 <div class="footer">
         <!-- footer-->
         <div class="container">
@@ -152,7 +153,7 @@ type="image/x-icon">
         </div>
     </div>
     <!-- /.footer-->
-    {% endblock bottom %}
+    {% endblock footer %}
 
 
 {% endblock %}

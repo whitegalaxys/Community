@@ -10,7 +10,7 @@
 </div>
 
 <div class="page-header">
-    <img class="img-rounded profile-thumbnail" src="{{ board.gravatar(size=256) }}">
+
     <div class="profile-header">
         <h1>{{ board.name }}</h1>
         <p> <strong>版块介绍</strong> {{ board.intoduction }} </p>
@@ -64,7 +64,7 @@
 {% endif %}
 
 
-<div class="post-form">
+<div class="post-form leave-comments">
     {% if current_user.can(Permission.WRITE) %}
     {{ wtf.quick_form(form) }}
     {% endif %}

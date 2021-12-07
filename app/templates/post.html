@@ -73,7 +73,7 @@
 
 
 {% if current_user.can(Permission.COMMENT) %}
-<div class="comment-form">
+<div class="comment-form leave-comments">
     {{ wtf.quick_form(form) }}
 </div>
 {% endif %}

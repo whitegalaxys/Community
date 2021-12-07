@@ -68,12 +68,14 @@
         {% include '_boards.html' %}
     {% endif %}
 </div>
-
+<br /><br /><br />
 
 {% if pagination %}
 <div class="pagination">
     {{ macros.pagination_widget(pagination, '.user', username=user.username) }}
 </div>
 {% endif %}
+     <br /><br />
+     <br /><br /><br /><br /><br />
 
 {% endblock %}

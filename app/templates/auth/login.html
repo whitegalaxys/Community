@@ -7,10 +7,18 @@
 <div class="page-header">
     <h1>登录</h1>
 </div>
-<div class="col-md-4">
+                  <br />
+    <br />    <br />
+    <br />
+<div class="leave-comments">
     {{ wtf.quick_form(form) }}
     <br>
     <p>忘记密码？ <a href="{{ url_for('auth.password_reset_request')}}">点此重置密码</a>.</p>
     <p>新用户? <a href="{{ url_for('auth.register') }}">点此注册</a>.</p>
 </div>
+                  <br />
+    <br />    <br />
+    <br />              <br />
+    <br />    <br />
+    <br />
 {% endblock %}

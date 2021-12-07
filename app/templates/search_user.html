@@ -5,8 +5,25 @@
 {% block title %}BBS - 搜索用户{% endblock %}
 
 {% block page_content %}
+
 <div class="page-header">
     <a  href="{{url_for('.index')}}"> 首页 </a>  >> <a href="{{url_for('.search_user')}}"> 搜索用户 </a>
 </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />    <br />
+    <br />
+
+    <div class="leave-comments">
 {{ wtf.quick_form(form) }}
+    </div>
+<br />
+    <br />
+    <br />
+    <br />
+    <br />    <br />
+    <br />
+    <br />
 {% endblock %}
