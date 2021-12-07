@@ -16,7 +16,7 @@ class Config:
     BBS_MAIL_SUBJECT_PREFIX = '[BBS]'
     BBS_MAIL_SENDER = '1162343632@qq.com'
     # 数据库管理员的邮箱，如果新添加的用户的邮箱在此之内，则将其角色置为数据库管理员
-    BBS_ADMIN = ["1309025479@qq.com", "1500012848@pku.edu.cn",'1162343632@qq.com']
+    BBS_ADMIN = ['1162343632@qq.com']
 
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SEND_FILE_MAX_AGE_DEFAULT = timedelta(seconds=1) #设置静态文件（如css，js）文件的最大缓存时间

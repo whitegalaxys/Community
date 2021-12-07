@@ -3,7 +3,7 @@ import os
 from flask_script import Manager, Shell
 from flask_migrate import Migrate, MigrateCommand
 from app import create_app, db
-from app.models import Role, User, Board, Post, Comment, Permission, Follow, generate_fake, comments_likes, posts_collections, boards_collections, moderators
+from app.models import Role, User, Board, Post, Comment, Permission, Follow, comments_likes, posts_collections, boards_collections, moderators
 
 app = create_app(os.getenv('BBS_CONFIG') or 'default')
 manager = Manager(app)
@@ -14,7 +14,7 @@ migrate = Migrate(app, db)
 # 这可以用来检查数据库，初始化数据库等
 def make_shell_context():
     return dict(app=app, db=db, Role=Role, User=User, Board=Board, Post=Post,
-                Comment=Comment, Permission=Permission, Follow=Follow, Fake=generate_fake,
+                Comment=Comment, Permission=Permission, Follow=Follow,
                 comments_likes=comments_likes, posts_collections=posts_collections,
                 boards_collections=boards_collections, moderators=moderators)
 

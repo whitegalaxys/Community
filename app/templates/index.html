@@ -5,6 +5,16 @@
 {% block title %}BBS - 首页{% endblock %}
 
 {% block page_content %}
+<!-- START Bootstrap-Cookie-Alert -->
+<div class="alert text-center cookiealert" role="alert">
+    <b>Do you like cookies?</b> &#x1F36A; We use cookies to ensure you get the best experience on our website. <a href="https://cookiesandyou.com/" target="_blank">Learn more</a>
+
+    <button type="button" class="btn btn-primary btn-sm acceptcookies">
+        I agree
+    </button>
+</div>
+<!-- END Bootstrap-Cookie-Alert -->
+
 <div class="post-tabs">
     <ul class="nav nav-tabs">
         <li{% if show_all %} class="active"{% endif %}><a href="{{ url_for('.show_all') }}">所有帖子</a></li>
@@ -27,4 +37,5 @@
 {% block scripts %}
 {{ super() }}
 {{ pagedown.include_pagedown() }}
+<script src="https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.js"></script>
 {% endblock %}
