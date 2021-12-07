@@ -1,16 +1,16 @@
-<ul class="comments">
-    {% for comment in comments %}
-    <li class="comment">
-        <div class="comment-thumbnail">
-            <a href="{{ url_for('.user', username=comment.author.username) }}">
-                <img class="img-rounded profile-thumbnail" src="{{ comment.author.gravatar(size=40) }}">
-            </a>
-        </div>
-        <div class="comment-content">
-            <div class="comment-date">{{ moment(comment.timestamp).fromNow() }}</div>
-            <div class="comment-author"><a href="{{ url_for('.user', username=comment.author.username) }}">{{ comment.author.username }}</a> {{comment.floor}} 层</div>
-            <div class="comment-body">
-                {% if comment.disabled %}
+                                    <div class="comments-area">
+                                        {% for comment in comments %}
+                                        <ul class="comment-list">
+                                            <li class="comment">
+                                                <div class="comment-body">
+                                                    <div class="comment-author"><img src="{{ avatars.robohash(comment.author.avatar_hash) }}" alt="" class="img-circle"> </div>
+                                                    <div class="comment-info">
+                                                        <div class="comment-header">
+                                                            <div class="comment-meta"><span class="comment-meta-date pull-right">{{ moment(comment.timestamp).fromNow() }} </span></div>
+                                                            <h4 class="user-title"><a href="{{ url_for('.user', username=comment.author.username) }}">{{ comment.author.username }}</a> {{comment.floor}} 层</h4>
+                                                        </div>
+                                                        <div class="comment-content">
+                                                            {% if comment.disabled %}
                     <p><i>评论被删除.</i></p>
                 {% endif %}
                 {% if current_user.is_administrator() or current_user.is_moderate(post.board) or not comment.disabled %}
@@ -22,8 +22,8 @@
                         <p class="re">Re {{ comment.refloor }}层: {{ comment.post.comments.filter_by(floor=comment.refloor).first().body }} </p>
                     {% endif %}
                 {% endif %}
-            </div>
-            <div class="comment-footer">
+                                                        </div>
+                                                        <div class="reply"><div class="comment-footer">
                 <ul class="list-inline">
                     <li>
                         <a href="{{ url_for('.response_comment', postid=post.id, floor=comment.floor, page=page) }}">
@@ -58,8 +58,10 @@
                         {% endif %}
                     </li>
                 </ul>
-            </div>
-        </div>
-    </li>
+            </div></div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
     {% endfor %}
-</ul>
+</div>

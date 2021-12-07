@@ -729,7 +729,7 @@ ul.widget-recent-post { }
 .reply { }
 
 /*---- thread comments --------*/
-.childern { padding-left: 100px; list-style: none; }
+.childern { padding-left: 200px; list-style: none; }
 .childern .comment-body { background-color: #f4f1ec; padding: 20px; border-radius: 10px; }
 .childern .comment-info { padding-left: 120px; }
 
