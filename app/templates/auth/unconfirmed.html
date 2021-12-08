@@ -3,6 +3,9 @@
 {% block title %}BBS - 确认账户{% endblock %}
 
 {% block page_content %}
+                  <br />
+    <br />    <br />
+    <br />
 <div class="page-header">
     <h1>
         你好, {{ current_user.username }}!
@@ -17,4 +20,9 @@
         <a href="{{ url_for('auth.resend_confirmation') }}">点此发送</a>
     </p>
 </div>
+                  <br />
+    <br />    <br />
+    <br />              <br />
+    <br />    <br />
+    <br />
 {% endblock %}
