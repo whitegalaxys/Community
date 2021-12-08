@@ -61,38 +61,38 @@ def index():
 @main.route('/all')
 def show_all():
     resp = make_response(redirect(url_for('.index')))
-    resp.set_cookie('show_all', '1', max_age=30*24*60*60)
-    resp.set_cookie('show_followed', '', max_age=30*24*60*60)
-    resp.set_cookie('most_viewed', '', max_age=30*24*60*60)
-    resp.set_cookie('most_comment', '', max_age=30*24*60*60)
+    resp.set_cookie('show_all', '1')
+    resp.set_cookie('show_followed', '')
+    resp.set_cookie('most_viewed', '')
+    resp.set_cookie('most_comment', '')
     return resp
 
 @main.route('/followed')
 @login_required
 def show_followed():
     resp = make_response(redirect(url_for('.index')))
-    resp.set_cookie('show_all', '', max_age=30*24*60*60)
-    resp.set_cookie('show_followed', '1', max_age=30*24*60*60)
-    resp.set_cookie('most_viewed', '', max_age=30*24*60*60)
-    resp.set_cookie('most_comment', '', max_age=30*24*60*60)
+    resp.set_cookie('show_all', '')
+    resp.set_cookie('show_followed', '1')
+    resp.set_cookie('most_viewed', '')
+    resp.set_cookie('most_comment', '')
     return resp
 
 @main.route('/mostviewed')
 def most_viewed():
     resp = make_response(redirect(url_for('.index')))
-    resp.set_cookie('show_all', '', max_age=30*24*60*60)
-    resp.set_cookie('show_followed', '', max_age=30*24*60*60)
-    resp.set_cookie('most_viewed', '1', max_age=30*24*60*60)
-    resp.set_cookie('most_comment', '', max_age=30*24*60*60)
+    resp.set_cookie('show_all', '')
+    resp.set_cookie('show_followed', '')
+    resp.set_cookie('most_viewed', '1')
+    resp.set_cookie('most_comment', '')
     return resp
 
 @main.route('/mostcomment')
 def most_comment():
     resp = make_response(redirect(url_for('.index')))
-    resp.set_cookie('show_all', '', max_age=30*24*60*60)
-    resp.set_cookie('show_followed', '', max_age=30*24*60*60)
-    resp.set_cookie('most_viewed', '', max_age=30*24*60*60)
-    resp.set_cookie('most_comment', '1', max_age=30*24*60*60)
+    resp.set_cookie('show_all', '')
+    resp.set_cookie('show_followed', '')
+    resp.set_cookie('most_viewed', '')
+    resp.set_cookie('most_comment', '1')
     return resp
 
 ################################################################ 首页（END） ################################################################
