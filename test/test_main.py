@@ -31,7 +31,7 @@ class TestFeed:
         assert response is not None
         assert response.status_code == 200
 
-    def test_post(self, test_client):
+    def test_posts_get(self, test_client):
         """
         Test POST request to the /logout route to assert the user is successfully
         logged out.
@@ -43,7 +43,58 @@ class TestFeed:
         db.session.commit()
         helpers.login(test_client, app_user.email, password)
 
-        response = test_client.post("/post/1", data={"title": "1234","content": "Mockpassword123!"}, follow_redirects=True)
+        response = test_client.get("/response_comment/1/1", follow_redirects=True)
 
         assert response is not None
-        assert response.status_code == 404
+        assert response.status_code == 200
+
+    def test_posts_post(self, test_client):
+        """
+        Test POST request to the /logout route to assert the user is successfully
+        logged out.
+        """
+        password = "1234"
+        hashed_password = bcrypt.hash(password)
+        app_user = User(email="2899345654@qq.com", password_hash=hashed_password)
+        db.session.add(app_user)
+        db.session.commit()
+        helpers.login(test_client, app_user.email, password)
+
+        response = test_client.post("/response_comment/1/1", data={"RE": "1234","回帖": "Mockpassword123!"}, follow_redirects=True)
+
+        assert response is not None
+        assert response.status_code == 200
+
+    def test_collect_get(self, test_client):
+        """
+        Test POST request to the /logout route to assert the user is successfully
+        logged out.
+        """
+        password = "1234"
+        hashed_password = bcrypt.hash(password)
+        app_user = User(email="2899345654@qq.com", password_hash=hashed_password)
+        db.session.add(app_user)
+        db.session.commit()
+        helpers.login(test_client, app_user.email, password)
+
+        response = test_client.get("/collect_post/1", follow_redirects=True)
+
+        assert response is not None
+        assert response.status_code == 200
+
+    def test_not_collect_get(self, test_client):
+        """
+        Test POST request to the /logout route to assert the user is successfully
+        logged out.
+        """
+        password = "1234"
+        hashed_password = bcrypt.hash(password)
+        app_user = User(email="2899345654@qq.com", password_hash=hashed_password)
+        db.session.add(app_user)
+        db.session.commit()
+        helpers.login(test_client, app_user.email, password)
+
+        response = test_client.get("/not_collect_post/1", follow_redirects=True)
+
+        assert response is not None
+        assert response.status_code == 200
