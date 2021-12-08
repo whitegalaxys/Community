@@ -46,4 +46,4 @@ class TestFeed:
         response = test_client.post("/post/1", data={"title": "1234","content": "Mockpassword123!"}, follow_redirects=True)
 
         assert response is not None
-        assert response.status_code == 200
+        assert response.status_code == 404
