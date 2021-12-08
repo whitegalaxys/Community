@@ -51,4 +51,4 @@ if __name__ == "__main__":
     logging.error('一般用来打印一些错误信息')
     logging.critical('用来打印一些致命的错误信息，等级最高')
     app.run()
-    app.run()
+
