@@ -37,13 +37,13 @@ class DevelopmentConfig(Config):
     DEBUG = True
     # 数据库的位置
     SQLALCHEMY_DATABASE_URI = os.environ.get('DEV_DATABASE_URL') or \
-        'sqlite:///' + os.path.join(basedir, 'test.db')
+        'sqlite:///' + os.path.join(basedir, 'data.db')
 
 
 # 发布时的配置
 class ProductionConfig(Config):
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
-        'sqlite:///' + os.path.join(basedir, 'data.db')
+        'sqlite:///' + os.path.join(basedir, 'test.db')
 
 
 config = {

@@ -7,7 +7,7 @@ from app.models import Role, User, Board, Post, Comment, Permission, Follow, com
 import logging
 from logging.handlers import RotatingFileHandler
 
-app = create_app(os.getenv('BBS_CONFIG') or 'production')
+app = create_app(os.getenv('BBS_CONFIG') or 'default')
 manager = Manager(app)
 migrate = Migrate(app, db)
 
